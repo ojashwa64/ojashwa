@@ -1,0 +1,37 @@
+ .name {
+    color: aliceblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: -220px;
+    margin-left: 60px;
+}
+
+#me {
+    border-radius: 10%;
+    width: 220px;
+    margin-top: 50px;
+}
+
+#p1 {
+    font-size: 19px;
+    margin-left: 700px;
+    color: aliceblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+#resume{
+    width: 200px;
+    padding-bottom: 6px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 9px;
+    font-weight: 800;
+    color: aliceblue;
+    background-color: blueviolet;
+    font-size: 19px;
+    margin-top: 20px;
+    margin-left: 700px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgb(104, 16, 186), 0 3px 6px #0e1117;
+    transition-property: 0.5s ease-in-out;
+    ;
+}
