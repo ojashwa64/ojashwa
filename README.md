@@ -1,5 +1,5 @@
 
-<html lang="en" style="background-color: #0e1117;">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +41,7 @@
 </style>
     <title>Ojashwa Soni </title>
 </head>
-<body>
+<body  style="background-color: #0e1117;">
        <img src="ME.jpeg" alt="" height="250px" style="margin-left  :28%;" id="me" >
        <h1 class="name" style="text-align: center;" >Ojashwa Soni</h1>
             <div style="width: 1000px;">
