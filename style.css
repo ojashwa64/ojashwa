@@ -1,37 +1,56 @@
- .name {
-    color: aliceblue;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-top: -220px;
-    margin-left: 60px;
+
+
+body {
+  background-color: #0e1117;
+  color: aliceblue;
+  font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
 #me {
-    border-radius: 10%;
-    width: 220px;
-    margin-top: 50px;
+  border-radius: 10%;
+  width: 220px;
+  margin-top: 50px;
+}
+
+.name {
+  margin-top: 20px;
+  text-align: center;
+}
+
+div {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 #p1 {
-    font-size: 19px;
-    margin-left: 700px;
-    color: aliceblue;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
+  font-size: 19px;
+  margin: 70px 0 20px 0;
 }
 
-#resume{
-    width: 200px;
-    padding-bottom: 6px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    border-radius: 9px;
-    font-weight: 800;
-    color: aliceblue;
-    background-color: blueviolet;
-    font-size: 19px;
-    margin-top: 20px;
-    margin-left: 700px;
-    cursor: pointer;
-    box-shadow: 0 2px 10px rgb(104, 16, 186), 0 3px 6px #0e1117;
-    transition-property: 0.5s ease-in-out;
-    ;
+#resume {
+  width: 200px;
+  padding: 10px;
+  background-color: blueviolet;
+  color: aliceblue;
+  border-radius: 9px;
+  font-weight: 800;
+  font-size: 19px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgb(104, 16, 186), 0 3px 6px #0e1117;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+#resume:hover {
+  transform: scale(1.05);
+}
+
+#resume a {
+  text-decoration: none;
+  color: inherit;
 }
