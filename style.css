@@ -63,3 +63,62 @@ body {
   text-decoration: none;
   color: inherit;
 }
+
+#about {
+  width: 1000px;
+  
+  position: absolute;
+  padding-top: 650px;
+  
+}
+
+.h3 {
+  text-align: left;
+  
+  font-size: 40px;
+}
+
+#p2 {
+  text-align: justify;
+  font-size: 19px;
+}
+
+#skills {
+  width: 1000px;
+  font-size: 19px;
+  position: absolute;
+  padding-top: 1900px;
+}
+#ha {
+  padding-top: 800px;
+  text-align: justify;
+}
+
+.h4 {
+  font-size: 26px;
+  text-align: justify;
+  margin-bottom: 9px;
+}
+.h5 {
+  font-size: 18px;
+}
+
+#github {
+  width: 200px;
+  padding: 10px;
+  background-color: blueviolet;
+  color: aliceblue;
+  border-radius: 9px;
+  font-weight: 800;
+  font-size: 19px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgb(104, 16, 186), 0 3px 6px #0e1117;
+  border: none;
+  transition: transform 0.3s ease;
+  position: absolute;
+  height: 40px;
+  width: 300px;
+  font-size: 19px;
+  position: absolute;
+  
+}
