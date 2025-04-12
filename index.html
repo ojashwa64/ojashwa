@@ -15,6 +15,7 @@
             --bg: #0e1117;
             --card-bg: #161b22;
             --accent: #58a6ff;
+            --header-bg: #000000;
         }
         
         * {
@@ -63,6 +64,49 @@
             100% { background-position: 0% 50%; }
         }
         
+        /* Header Styles */
+        #header {
+            background-color: var(--header-bg);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        #header img {
+            width: 50px;
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+        
+        #header img:hover {
+            transform: scale(1.1);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+            background-color: rgba(138, 43, 226, 0.1);
+        }
+        
+        /* Main Content */
         .profile-container {
             display: flex;
             flex-direction: column;
@@ -70,7 +114,7 @@
             gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 60px 20px 40px;
             animation: fadeIn 1s ease-out;
         }
         
@@ -85,7 +129,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-           
             box-shadow: 0 10px 30px rgba(138, 43, 226, 0.4);
             animation: float 4s ease-in-out infinite;
         }
@@ -163,10 +206,8 @@
             justify-content: center;
         }
         
-        .resume-button, .github-button {
+        .btn {
             padding: 12px 25px;
-            background-color: var(--primary);
-            color: var(--text);
             border-radius: 8px;
             font-weight: 600;
             font-size: 1rem;
@@ -181,10 +222,28 @@
             margin: 5px 0;
         }
         
-        .resume-button:hover, .github-button:hover {
+        .resume-button {
+            background-color: var(--primary);
+            color: var(--text);
+        }
+        
+        .github-button {
+            background-color: var(--card-bg);
+            color: var(--text);
+            border: 1px solid var(--primary);
+        }
+        
+        .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(138, 43, 226, 0.6);
+        }
+        
+        .resume-button:hover {
             background-color: var(--primary-dark);
+        }
+        
+        .github-button:hover {
+            background-color: rgba(138, 43, 226, 0.1);
         }
         
         .section {
@@ -225,6 +284,9 @@
             margin: 30px 0 15px 0;
             text-align: left;
             color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .skill-list, .feature-list, .tech-list {
@@ -347,12 +409,26 @@
             animation: float 10s infinite linear;
         }
         
+        /* Footer */
+        footer {
+            background-color: var(--header-bg);
+            padding: 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .footer-text {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
         /* Responsive */
         @media (min-width: 992px) {
             .profile-container {
                 flex-direction: row;
                 align-items: center;
                 text-align: left;
+                padding: 80px 20px 60px;
             }
         
             .text-content {
@@ -362,6 +438,17 @@
         }
         
         @media (max-width: 768px) {
+            #header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
             .name {
                 font-size: 2rem;
             }
@@ -401,9 +488,14 @@
                 width: 100%;
             }
             
-            .resume-button, .github-button {
+            .btn {
                 width: 100%;
                 justify-content: center;
+            }
+            
+            .profile-image-container {
+                width: 200px;
+                height: 200px;
             }
         }
     </style>
@@ -413,155 +505,174 @@
     <!-- Particles Background -->
     <div class="particles" id="particles"></div>
     
-    <div class="profile-container">
-        <div class="profile-image-container">
-            <img src="ME.jpeg" alt="Ojashwa Soni" class="profile-image">
+    <!-- Header -->
+    <header id="header">
+        <img src="new.png" alt="Logo" id="logo">
+        <nav class="nav-links">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">Free Courses</a>
+            <a href="#" class="nav-link">Notes</a>
+            <a href="#" class="nav-link">Blog</a>
+        </nav>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div class="profile-container">
+            <div class="profile-image-container">
+                <img src="ME.jpeg" alt="Ojashwa Soni" class="profile-image">
+            </div>
+            <div class="text-content">
+                <h1 class="name">Ojashwa Soni</h1>
+                <p class="tagline"><b>Web Developer | Canva Designer | Video Editor | Social Media Manager | E-Commerce Manager</b></p>
+                
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/ojashwa64" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/ojashwa_64?igsh=MWdpdm1penRnd3R6bQ==" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                
+                <div class="action-buttons">
+                    <a href="Ojashwa Soni.pdf" class="btn resume-button" target="_blank">
+                        <i class="fas fa-file-alt"></i> My Resume
+                    </a>
+                    <a href="https://github.com/ojashwa64" class="btn github-button" target="_blank">
+                        <i class="fab fa-github"></i> GitHub Profile
+                    </a>
+                </div>
+                
+                <p class="email">
+                    <i class="fas fa-envelope"></i> ojashwasoni2110@gmail.com
+                </p>
+            </div>
         </div>
-        <div class="text-content">
-            <h1 class="name">Ojashwa Soni</h1>
-            <p class="tagline"><b>Web Developer | Canva Designer | Video Editor | Social Media Manager | E-Commerce Manager</b></p>
-            
-            <div class="social-links">
-                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/ojashwa64" class="social-icon"><i class="fab fa-github"></i></a>
-                <a href="https://www.instagram.com/ojashwa_64?igsh=MWdpdm1penRnd3R6bQ==" class="social-icon"><i class="fab fa-instagram"></i></a>
-            </div>
-            <div class="action-buttons">
-                <button class="resume-button">
-                    <i class="fas fa-file-alt"></i>
-                    <a href="Ojashwa Soni.pdf" style="color: white;">My Resume</a>
-                </button>
-               
-            </div>
-            
-            <p class="email">
-                <i class="fas fa-envelope"></i> ojashwasoni2110@gmail.com
+        
+        <div class="section">
+            <h3 class="section-title">About Me</h3>
+            <p class="about-text">
+                I'm a passionate Web Developer with expertise in HTML & CSS, dedicated to crafting clean, responsive, and user-friendly websites. Beyond coding, I'm also a skilled Canva Designer, creating visually appealing graphics that enhance brand identity. As an Ecommerce Manager, I optimize online stores for seamless shopping experiences, driving sales and customer engagement. Additionally, my skills as a Video Editor and Social Media Manager allow me to produce compelling content and strategize digital campaigns that boost online presence. With a blend of technical and creative abilities, I bring a unique, well-rounded approach to every project I work on.
             </p>
         </div>
-    </div>
-    
-    <div class="section">
-        <h3 class="section-title">About Me</h3>
-        <p class="about-text">
-            I'm a passionate Web Developer with expertise in HTML & CSS, dedicated to crafting clean, responsive, and user-friendly websites. Beyond coding, I'm also a skilled Canva Designer, creating visually appealing graphics that enhance brand identity. As an Ecommerce Manager, I optimize online stores for seamless shopping experiences, driving sales and customer engagement. Additionally, my skills as a Video Editor and Social Media Manager allow me to produce compelling content and strategize digital campaigns that boost online presence. With a blend of technical and creative abilities, I bring a unique, well-rounded approach to every project I work on.
-        </p>
-    </div>
-    
-    <div class="section">
-        <h3 class="section-title">Hard Skills</h3>
         
-        <h4 class="skill-category">Frontend Development <i class="fas fa-code"></i></h4>
-        <ul class="skill-list">
-            <li>Strong proficiency in HTML & CSS for building responsive, visually appealing websites.</li> 
-            <li>Basic knowledge of JavaScript for interactive web elements.</li>
-        </ul>
-        
-        <h4 class="skill-category">Design & Creativity <i class="fas fa-paint-brush"></i></h4>
-        <ul class="skill-list">
-            <li>Skilled in Canva for creating professional graphics, social media posts, and branding materials.</li>
-            <li>Experience in UI/UX principles to enhance user experience.</li>
-        </ul>
-        
-        <h4 class="skill-category">E-commerce Management <i class="fas fa-shopping-cart"></i></h4>
-        <ul class="skill-list">
-            <li>Expertise in managing online stores, optimizing product listings, and improving conversion rates.</li>
-            <li>Familiarity with platforms like Shopify, WooCommerce, or Amazon Seller Central.</li>
-        </ul>
-        
-        <h4 class="skill-category">Video Editing <i class="fas fa-video"></i></h4>
-        <ul class="skill-list">
-            <li>Proficient in Adobe Premiere Pro for creating engaging videos and social media content.</li>
-            <li>Experience in editing and optimizing videos for various platforms.</li>
-        </ul>
-        
-        <h4 class="skill-category">Digital Marketing & Social Media <i class="fas fa-hashtag"></i></h4>
-        <ul class="skill-list">
-            <li>Experience in social media management (Facebook, Instagram, LinkedIn, TikTok).</li>
-            <li>Knowledge of content scheduling tools (Meta Business Suite, Buffer, Hootsuite).</li>
-            <li>Understanding of SEO basics and performance analytics (Google Analytics, Facebook Insights).</li>
-        </ul>
-    </div>
-    
-    <div class="section">
-        <h3 class="section-title">My Projects <i class="fas fa-rocket"></i></h3>
-        <p class="about-text">
-            Here you'll find a curated collection of my web development, e-commerce, and digital media projects. Each project showcases my ability to build, design, and optimize digital experiences – from clean, responsive websites to high-converting online stores and engaging social content.
-        </p>
-        
-        <div class="projects-container">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <h4 class="project-title">
-                    <i class="fas fa-sign-in-alt"></i> Log In Page
-                </h4>
-                
-                <p class="project-description">
-                    A fully functional login authentication system built with HTML, CSS, and JavaScript, featuring user-friendly UI with form validation and security-focused design.
-                </p>
-                
-                <h5 class="project-subtitle">Key Features:</h5>
-                <ul class="feature-list">
-                    <li>Clean, responsive design with form validation</li>
-                    <li>Password encryption (conceptual/hashed storage demo)</li>
-                    <li>Simulated login state persistence</li>
-                    <li>Real-time input validation and error handling</li>
-                </ul>
-                
-                <h5 class="project-subtitle">Tech Stack:</h5>
-                <div class="project-tech">
-                    <span class="tech-tag">HTML5</span>
-                    <span class="tech-tag">CSS3</span>
-                    
-                </div>
-                
-                <div class="project-links">
-                    <a href="https://github.com/ojashwa64/Log-in-page" target="_blank" class="project-link">
-                        <i class="fab fa-github"></i> View Code
-                    </a>
-                    <a href="https://ojashwa64.github.io/Log-in-page/" class="project-link">
-                        <i class="fas fa-external-link-alt"></i> Live Demo
-                    </a>
-                </div>
-            </div>
+        <div class="section">
+            <h3 class="section-title">Hard Skills</h3>
             
-            <!-- Project 2 -->
-            <div class="project-card">
-                <h4 class="project-title">
-                    <i class="fas fa-shopping-bag"></i>E-Book Listings
-
-                </h4>
-                
-                <p class="project-description">
-                    A mobile-friendly website for browsing, selecting, and downloading free eBooks with features similar to e-commerce but adapted for digital content distribution.
-                </p>
-                
-                <h5 class="project-subtitle">Key Features:</h5>
-                <ul class="feature-list">
-                    <li>Download format options (PDFI) </li>
-                    <li>Clean, readable layout optimized for extended reading sessions</li>
-                    <li>Responsive design for all devices</li>
-                    <li>High-resolution cover image</li>
-                </ul>
-                
-                <h5 class="project-subtitle">Tech Stack:</h5>
-                <div class="project-tech">
-                    <span class="tech-tag">HTML5</span>
-                    <span class="tech-tag">CSS3</span>
-                    <span class="tech-tag">JavaScript</span>
+            <h4 class="skill-category"><i class="fas fa-code"></i> Frontend Development</h4>
+            <ul class="skill-list">
+                <li>Strong proficiency in HTML & CSS for building responsive, visually appealing websites.</li> 
+                <li>Basic knowledge of JavaScript for interactive web elements.</li>
+            </ul>
+            
+            <h4 class="skill-category"><i class="fas fa-paint-brush"></i> Design & Creativity</h4>
+            <ul class="skill-list">
+                <li>Skilled in Canva for creating professional graphics, social media posts, and branding materials.</li>
+                <li>Experience in UI/UX principles to enhance user experience.</li>
+            </ul>
+            
+            <h4 class="skill-category"><i class="fas fa-shopping-cart"></i> E-commerce Management</h4>
+            <ul class="skill-list">
+                <li>Expertise in managing online stores, optimizing product listings, and improving conversion rates.</li>
+                <li>Familiarity with platforms like Shopify, WooCommerce, or Amazon Seller Central.</li>
+            </ul>
+            
+            <h4 class="skill-category"><i class="fas fa-video"></i> Video Editing</h4>
+            <ul class="skill-list">
+                <li>Proficient in Adobe Premiere Pro for creating engaging videos and social media content.</li>
+                <li>Experience in editing and optimizing videos for various platforms.</li>
+            </ul>
+            
+            <h4 class="skill-category"><i class="fas fa-hashtag"></i> Digital Marketing & Social Media</h4>
+            <ul class="skill-list">
+                <li>Experience in social media management (Facebook, Instagram, LinkedIn, TikTok).</li>
+                <li>Knowledge of content scheduling tools (Meta Business Suite, Buffer, Hootsuite).</li>
+                <li>Understanding of SEO basics and performance analytics (Google Analytics, Facebook Insights).</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h3 class="section-title"><i class="fas fa-rocket"></i> My Projects</h3>
+            <p class="about-text">
+                Here you'll find a curated collection of my web development, e-commerce, and digital media projects. Each project showcases my ability to build, design, and optimize digital experiences – from clean, responsive websites to high-converting online stores and engaging social content.
+            </p>
+            
+            <div class="projects-container">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <h4 class="project-title">
+                        <i class="fas fa-sign-in-alt"></i> Log In Page
+                    </h4>
                     
+                    <p class="project-description">
+                        A fully functional login authentication system built with HTML, CSS, and JavaScript, featuring user-friendly UI with form validation and security-focused design.
+                    </p>
+                    
+                    <h5 class="project-subtitle">Key Features:</h5>
+                    <ul class="feature-list">
+                        <li>Clean, responsive design with form validation</li>
+                        <li>Password encryption (conceptual/hashed storage demo)</li>
+                        <li>Simulated login state persistence</li>
+                        <li>Real-time input validation and error handling</li>
+                    </ul>
+                    
+                    <h5 class="project-subtitle">Tech Stack:</h5>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="https://github.com/ojashwa64/Log-in-page" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                        <a href="https://ojashwa64.github.io/Log-in-page/" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
                 </div>
                 
-                <div class="project-links">
-                    <a href="https://github.com/ojashwa64/InkPiston" target="_blank" class="project-link">
-                        <i class="fab fa-github"></i> View Code
-                    </a>
-                    <a href="https://ojashwa64.github.io/InkPiston/" class="project-link">
-                        <i class="fas fa-external-link-alt"></i> Live Demo
-                    </a>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <h4 class="project-title">
+                        <i class="fas fa-shopping-bag"></i> E-Book Listings
+                    </h4>
+                    
+                    <p class="project-description">
+                        A mobile-friendly website for browsing, selecting, and downloading free eBooks with features similar to e-commerce but adapted for digital content distribution.
+                    </p>
+                    
+                    <h5 class="project-subtitle">Key Features:</h5>
+                    <ul class="feature-list">
+                        <li>Download format options (PDF)</li>
+                        <li>Clean, readable layout optimized for extended reading sessions</li>
+                        <li>Responsive design for all devices</li>
+                        <li>High-resolution cover images</li>
+                    </ul>
+                    
+                    <h5 class="project-subtitle">Tech Stack:</h5>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="https://github.com/ojashwa64/InkPiston" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                        <a href="https://ojashwa64.github.io/InkPiston/" target="_blank" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <p class="footer-text">© 2023 Ojashwa Soni. All rights reserved.</p>
+    </footer>
     
     <script>
         // Create particles
